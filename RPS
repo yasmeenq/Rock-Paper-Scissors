@@ -1,14 +1,15 @@
-user = input("rock, paper, scissors?")
-print("you: "+ user)
-com = ["rock", "paper", "scissors"]
+player = input("rock, paper, scissors?")
 
-for index in com:
-    import random
-    x = random.choice(com)
-    print("computer: "+ x)
-    break
+print("you: "+ player)
 
-while user == "rock":
+computer = ["rock", "paper", "scissors"]
+
+import random
+x = random.choice(computer)
+print("computer: "+ x)
+
+
+while player == "rock":
     if x == "rock":
         print("tie")
         break
@@ -18,7 +19,7 @@ while user == "rock":
     elif x == "paper":
         print("you lose")
         break
-while user == "paper":
+while player == "paper":
     if x == "rock":
         print("you win")
         break
@@ -28,7 +29,7 @@ while user == "paper":
     elif x == "paper":
         print("tie")
         break
-while user == "scissors":
+while player == "scissors":
     if x == "rock":
         print("you lose")
         break
