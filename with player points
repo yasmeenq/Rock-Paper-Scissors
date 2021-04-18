@@ -1,0 +1,59 @@
+# the goal of this game: whoever wins three times, wins the whole game.
+# so this game will play forever until one of the players wins three times
+import random
+
+player_points = 0
+computer_points = 0
+
+while player_points < 3 and computer_points < 3:
+    player = input("rock, paper, scissors?")
+    print("you: " + player)
+
+    if(
+        player != "rock"
+        and player != "paper"
+        and player != "scissors"
+):
+        print("type again")
+        continue
+
+    computer = ["rock", "paper", "scissors"]
+
+    x = random.choice(computer)
+    print("computer: " + x)
+
+    if player == x:
+        print("tie")
+        print("computer points:" + str(computer_points) + "  : your points:" + str(player_points))
+        print("")
+    elif player == "rock":
+        if x == "paper":
+            computer_points += 1
+            print("computer points:"+str(computer_points)+ "  : your points:" +str(player_points))
+            print("")
+        elif x == "scissors":
+            player_points += 1
+            print("computer points:"+str(computer_points)+ "  : your points:" +str(player_points))
+            print("")
+    elif player == "paper":
+        if x == "scissors":
+            computer_points += 1
+            print("computer points:" + str(computer_points) + "  : your points:" + str(player_points))
+            print("")
+        elif x == "rock":
+            player_points += 1
+            print("computer points:" + str(computer_points) + "  : your points:" + str(player_points))
+            print("")
+    elif player == "scissors":
+        if x == "rock":
+            computer_points += 1
+            print("computer points:" + str(computer_points) + "  : your points:" + str(player_points))
+            print("")
+        elif x == "paper":
+            player_points += 1
+            print("computer points:" + str(computer_points) + "  : your points:" + str(player_points))
+            print("")
+    if computer_points == 3:
+        print("you lost, hard luck!")
+    elif player_points == 3:
+        print("WINNER!")
