@@ -1,0 +1,40 @@
+user = input("rock, paper, scissors?")
+print("you: "+ user)
+com = ["rock", "paper", "scissors"]
+
+for index in com:
+    import random
+    x = random.choice(com)
+    print("computer: "+ x)
+    break
+
+while user == "rock":
+    if x == "rock":
+        print("tie")
+        break
+    elif x == "scissors":
+        print("you win")
+        break
+    elif x == "paper":
+        print("you lose")
+        break
+while user == "paper":
+    if x == "rock":
+        print("you win")
+        break
+    elif x == "scissors":
+        print("you lose")
+        break
+    elif x == "paper":
+        print("tie")
+        break
+while user == "scissors":
+    if x == "rock":
+        print("you lose")
+        break
+    elif x == "scissors":
+        print("tie")
+        break
+    elif x == "paper":
+        print("you win")
+        break
